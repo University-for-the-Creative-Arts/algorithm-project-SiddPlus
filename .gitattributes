@@ -1,4 +1,4 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 
-FMPGame/FMP/Content/Static/** filter=lfs diff=lfs merge=lfs -text
+algorithm-project-SiddPlus/FMP/Content/Static/** filter=lfs diff=lfs merge=lfs -text
