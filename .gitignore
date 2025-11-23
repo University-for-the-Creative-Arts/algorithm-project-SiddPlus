@@ -73,3 +73,4 @@ Plugins/**/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+FMP/Intermediate/ProjectFiles/.Rider/Win64/Development/Editor/UnrealEditor.json
