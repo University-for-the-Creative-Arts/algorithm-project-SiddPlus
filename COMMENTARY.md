@@ -28,8 +28,6 @@ The approach uses several procedural techniques to create a varied, repeatable w
     2.  Density Spawning: Items with `MaxSpawnCount == 0` are checked at *every terrain vertex* within a safe inner border. They are spawned if a random value (`FMath::FRand()`) is less than their defined `Density` value, allowing for uniform ground cover (like grass or rocks).
 * Border Spawning: Actors and meshes intended for the map's edges are spawned in a specific loop that selects a random number of borders and then attempts to place objects at predetermined grid-fraction locations (Left, Middle, Right) along those borders, adding a random planar offset for variation.
 
----
-
 ## Tools and Data Structures
 
 * Unreal Engine APIs:
@@ -39,3 +37,14 @@ The approach uses several procedural techniques to create a varied, repeatable w
     * `FMath::RandInit / FMath::RandRange`: Used for deterministic randomness in noise offset, object placement, rotation, and scale.
 * Spatial Grid (`SpawnedObjectGrid`): To efficiently check for object overlap, a `TMap<FIntPoint, TArray<FSpawnedObjectInfo>>` is used. This structure maps 2D grid coordinates to a list of objects within that cell. `IsLocationClear` checks the object's grid cell and its 8 neighbors, minimizing the number of collision checks.
 * Raycasting (`GetTerrainPointAtWorldLocationXY`): After an initial random position is found on the vertex grid, a raycast (`LineTraceComponent`) is performed from above the terrain down to the generated procedural mesh. This provides a more accurate ground collision point and the correct surface normal for objects to be rotated and aligned to the terrain's slope.
+
+## Game
+[ProcGen Files](https://github.com/SiddPlus/FMPGame)
+
+![ProcGen1 Screenshot](ProcGen1.png)
+
+![ProcGen2  Screenshot](ProcGen2.png)
+
+![ProcGen3 Screenshot](ProcGen3.png)
+
+![ProcGen GIF](ProcGen.gif)
